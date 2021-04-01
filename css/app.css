@@ -1,0 +1,12 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: hsl(230, 100%, 99%);
+    background-image: url("../images/pattern-circles.svg"), url("../images/bg-pattern.svg");
+    background-position: left 50% top 52px, left 0px top 0px;
+    background-size: 145px 145px, 100% 408px;
+    background-repeat: no-repeat;
+}
