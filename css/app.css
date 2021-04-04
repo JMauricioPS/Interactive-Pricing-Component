@@ -1,12 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
 * {
     margin: 0px;
     padding: 0px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+}
+
+:root {
+    --Very-Pale-Blue: hsl(230, 100%, 99%);
+    --Grayish-Blue: hsl(225, 20%, 60%);
+    --Pricing-Component: hsl(0, 0%, 100%);
 }
 
 body {
-    background-color: hsl(230, 100%, 99%);
+    background-color: var(--Very-Pale-Blue);
     background-image: url("../images/pattern-circles.svg"), url("../images/bg-pattern.svg");
     background-position: left 50% top 52px, left 0px top 0px;
     background-size: 145px 145px, 100% 408px;
     background-repeat: no-repeat;
+    color: var(--Grayish-Blue);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 86px;
+    color: hsl(0, 0%, 0%, 0.7);
+    font-size: 30px;
+    font-weight: 800;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.cart {
+    width: 500px;
+    background-color: var(--Pricing-Component);
 }
