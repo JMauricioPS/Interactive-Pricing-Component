@@ -14,29 +14,35 @@
 
     <h1>Simple, traffic-based pricing</h1>
     <h2>Sign-up for our 30-day trial. No credit card required.</h2>
-    <div class="cart">
-        <div class="pagesviews-pricing">
-            <span>100K PAGEVIEWS</span>
-            <span>$6.00</span>
-            <span>/month</span>
+    <div class="card">
+        <div class="price-pageviews">
+            <p class="pageviews"><span id="n-pageviews">100</span>K PAGEVIEWS</p>
+            <div class="price-plan">
+                <p class="price"><span>$</span>6.00</p>
+                <p class="plan">/month</p>
+            </div>
         </div>
-        <div class="slider-pageviews">
-            <input type="range" name="range-pageviews" id="range-pageviews">
+        <div class="slider">
+            <input class="slider-range" type="range" min="0" max="100" value="50" name="range-pageviews" id="range-pageviews">
         </div>
-        <div class="toggle-price-plan">
-            <span>Monthly Billing</span>
-            <input type="checkbox" name="switch-discount-plan" id="switch-discount-plan">
-            <span>Yearly Billing</span>
-            <span>25% discount</span>
+        <div class="toggle-price">
+            <div class="toggle">
+                <p id="monthly">Monthly Billing</p>
+                <label for="switch-discount-plan" class="switch"> <input type="checkbox" name="switch-discount-plan" id="switch-discount-plan"></label>
+                <p id="yearly">Yearly Billing</p>
+            </div>
+            <span id="discount">25% discount</span>
         </div>
-        <hr>
+        <hr class="linear">
         <div class="benefits-button">
             <ul>
-                <li>Unlimited websites</li>
-                <li>100% data ownership</li>
-                <li>Email reports</li>
+                <li><img src="images/icon-check.svg" alt=""> Unlimited websites</li>
+                <li><img src="images/icon-check.svg" alt=""> 100% data ownership</li>
+                <li><img src="images/icon-check.svg" alt=""> Email reports</li>
             </ul>
-            <input type="submit" value="Start my trial">
+            <div class="btn">
+                <input class="button" type="submit" value="Start my trial">
+            </div>
         </div>
     </div>
 </body>

@@ -3,29 +3,40 @@
     margin: 0px;
     padding: 0px;
     font-family: 'Manrope', sans-serif;
-    font-size: 15px;
+    font-size: 1em;
 }
 
 :root {
     --Very-Pale-Blue: hsl(230, 100%, 99%);
     --Grayish-Blue: hsl(225, 20%, 60%);
     --Pricing-Component: hsl(0, 0%, 100%);
+    --Pale-Blue: hsl(226, 100%, 87%);
+    --Dark-Desaturated-Blue: hsl(227, 35%, 25%);
+    --Soft-Cyan: hsl(174, 77%, 80%);
+    --Strong-Cyan: hsl(174, 86%, 45%);
+    --Strong-Cyan-active: hsl(180, 100%, 31%);
+    --Light-Grayish-Blue: hsl(224, 65%, 95%);
+    --Light-Grayish-Red: hsl(14, 92%, 95%);
+    --Light-Red: hsl(15, 100%, 70%);
 }
 
 body {
     background-color: var(--Very-Pale-Blue);
     background-image: url("../images/pattern-circles.svg"), url("../images/bg-pattern.svg");
-    background-position: left 50% top 52px, left 0px top 0px;
-    background-size: 145px 145px, 100% 408px;
+    background-position: left 50% top 26px, left 0px top 0px;
+    background-size: 145px 145px, 100vw 408px;
     background-repeat: no-repeat;
     color: var(--Grayish-Blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
     text-align: center;
-    margin-top: 86px;
-    color: hsl(0, 0%, 0%, 0.7);
-    font-size: 30px;
+    margin-top: 50px;
+    color: var(--Dark-Desaturated-Blue);
+    font-size: 2em;
     font-weight: 800;
 }
 
@@ -35,7 +46,211 @@ h2 {
     font-weight: 600;
 }
 
-.cart {
+.card {
     width: 500px;
+    margin-top: 90px;
     background-color: var(--Pricing-Component);
+    border-radius: 10px;
+    box-shadow: 0em 0.5em 1em 0.05em var(--Pale-Blue);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, auto);
+}
+
+
+/* price pageviews*/
+
+.price-pageviews {
+    grid-row: 1 / 2;
+    grid-column: 1 / 9;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.price-pageviews .pageviews {
+    padding: 40px;
+    letter-spacing: 1px;
+}
+
+.price-pageviews .price-plan {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 40px;
+}
+
+.price-pageviews .price-plan .price {
+    font-size: 2.3em;
+    color: var(--Dark-Desaturated-Blue);
+}
+
+
+/*slider*/
+
+.slider {
+    grid-row: 2 / 3;
+    grid-column: 1 / 9;
+    margin: 0px 40px 15px;
+    height: min-content;
+}
+
+.slider-range {
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--Light-Grayish-Blue);
+}
+
+.slider-range::-moz-range-progress {
+    border-radius: 5px;
+    height: 10px;
+    background-color: var(--Soft-Cyan);
+}
+
+.slider-range::-webkit-slider-thumb,
+.slider-range::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--Strong-Cyan);
+    background-image: url(../images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+}
+
+.slider-range::-moz-range-thumb:active {
+    background-color: var(--Strong-Cyan-active);
+}
+
+.slider-range::-webkit-slider-thumb:active {
+    background-color: var(--Strong-Cyan-active);
+}
+
+
+/* toggle price*/
+
+.toggle-price {
+    grid-row: 3 / 4;
+    grid-column: 1 / 9;
+    height: min-content;
+    display: flex;
+    justify-content: end;
+    padding-right: 40px;
+}
+
+.toggle-price #discount {
+    font-size: .6em;
+    padding: 4px 4px;
+    color: var(--Light-Red);
+    background-color: var(--Light-Grayish-Red);
+    border-radius: 1em;
+}
+
+.toggle-price .toggle {
+    display: flex;
+    vertical-align: middle;
+    margin-right: 5px;
+    font-size: 0.9em;
+}
+
+.toggle-price .toggle .switch input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    vertical-align: middle;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    background: var(--Light-Grayish-Blue);
+    position: relative;
+    margin: 0px 10px;
+}
+
+.toggle-price .toggle .switch input[type="checkbox"]::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 2px 0 2px 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 2px;
+    top: 2px;
+}
+
+.toggle-price .toggle .switch input:hover[type="checkbox"] {
+    cursor: pointer;
+}
+
+.toggle-price .toggle .switch input:checked[type="checkbox"] {
+    background-color: var(--Soft-Cyan);
+}
+
+.toggle-price .toggle .switch input:checked[type="checkbox"]::before {
+    left: calc(40px - 18px);
+    box-shadow: 2px 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+/* linear*/
+
+.linear {
+    grid-row: 4 / 5;
+    grid-column: 1 / 9;
+    margin: 40px 0px;
+    border: .5px solid var(--Light-Grayish-Blue);
+}
+
+
+/*benefits button*/
+
+.benefits-button {
+    grid-row: 5 / 6;
+    grid-column: 1 / 9;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 20px;
+}
+
+.benefits-button ul li {
+    grid-column: 1 / 2;
+    list-style: none;
+    padding-left: 40px;
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+
+.benefits-button ul li img {
+    width: .5em;
+    height: .5em;
+}
+
+.benefits-button .btn {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    padding-right: 40px;
+}
+
+.benefits-button .btn .button {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--Dark-Desaturated-Blue);
+    color: var(--Grayish-Blue);
+    font-weight: 600;
+}
+
+.benefits-button .btn .button:hover {
+    cursor: pointer;
+    color: var(--Light-Grayish-Blue);
 }
