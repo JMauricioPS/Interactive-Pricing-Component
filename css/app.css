@@ -53,7 +53,7 @@ h2 {
     border-radius: 10px;
     box-shadow: 0em 0.5em 1em 0.05em var(--Pale-Blue);
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(5, auto);
 }
 
@@ -62,24 +62,24 @@ h2 {
 
 .price-pageviews {
     grid-row: 1 / 2;
-    grid-column: 1 / 9;
+    grid-column: 1 / 2;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
-.price-pageviews .pageviews {
+.pageviews {
     padding: 40px;
     letter-spacing: 1px;
 }
 
-.price-pageviews .price-plan {
+.price-plan {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     padding-right: 40px;
 }
 
-.price-pageviews .price-plan .price {
+.price-plan .price {
     font-size: 2.3em;
     color: var(--Dark-Desaturated-Blue);
 }
@@ -89,7 +89,7 @@ h2 {
 
 .slider {
     grid-row: 2 / 3;
-    grid-column: 1 / 9;
+    grid-column: 1 / 3;
     margin: 0px 40px 15px;
     height: min-content;
 }
@@ -110,7 +110,26 @@ h2 {
     background-color: var(--Soft-Cyan);
 }
 
-.slider-range::-webkit-slider-thumb,
+.slider-range::-webkit-progress-bar {
+    border-radius: 5px;
+    height: 10px;
+    background-color: var(--Soft-Cyan);
+}
+
+.slider-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--Strong-Cyan);
+    background-image: url(../images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+}
+
 .slider-range::-moz-range-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -138,10 +157,11 @@ h2 {
 
 .toggle-price {
     grid-row: 3 / 4;
-    grid-column: 1 / 9;
+    grid-column: 1 / 3;
     height: min-content;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
+    align-items: center;
     padding-right: 40px;
 }
 
@@ -153,11 +173,23 @@ h2 {
     border-radius: 1em;
 }
 
+.toggle-price #discount::before {
+    content: "25% discount";
+}
+
 .toggle-price .toggle {
     display: flex;
     vertical-align: middle;
     margin-right: 5px;
     font-size: 0.9em;
+}
+
+.toggle-price .toggle .plan-off {
+    font-weight: normal;
+}
+
+.toggle-price .toggle .plan-on {
+    font-weight: bold;
 }
 
 .toggle-price .toggle .switch input[type="checkbox"] {
@@ -170,6 +202,7 @@ h2 {
     background: var(--Light-Grayish-Blue);
     position: relative;
     margin: 0px 10px;
+    outline: none;
 }
 
 .toggle-price .toggle .switch input[type="checkbox"]::before {
@@ -202,7 +235,7 @@ h2 {
 
 .linear {
     grid-row: 4 / 5;
-    grid-column: 1 / 9;
+    grid-column: 1 / 3;
     margin: 40px 0px;
     border: .5px solid var(--Light-Grayish-Blue);
 }
@@ -212,13 +245,11 @@ h2 {
 
 .benefits-button {
     grid-row: 5 / 6;
-    grid-column: 1 / 9;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-column: 1 / 2;
     padding-bottom: 20px;
 }
 
-.benefits-button ul li {
+.benefits-button li {
     grid-column: 1 / 2;
     list-style: none;
     padding-left: 40px;
@@ -231,16 +262,17 @@ h2 {
     height: .5em;
 }
 
-.benefits-button .btn {
+.btn {
+    grid-row: 5 / 6;
     grid-column: 2 / 3;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: right;
+    justify-content: flex-end;
     padding-right: 40px;
 }
 
-.benefits-button .btn .button {
+.btn .button {
     width: 150px;
     height: 40px;
     border-radius: 20px;
@@ -248,9 +280,11 @@ h2 {
     background-color: var(--Dark-Desaturated-Blue);
     color: var(--Grayish-Blue);
     font-weight: 600;
+    appearance: none;
+    outline: none;
 }
 
-.benefits-button .btn .button:hover {
+.btn .button:hover {
     cursor: pointer;
     color: var(--Light-Grayish-Blue);
 }

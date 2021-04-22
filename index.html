@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/mediaQuery.css">
+    <script src="js/app.js"></script>
     <title>Interactive pricing component</title>
 </head>
 
@@ -15,35 +17,35 @@
     <h1>Simple, traffic-based pricing</h1>
     <h2>Sign-up for our 30-day trial. No credit card required.</h2>
     <div class="card">
-        <div class="price-pageviews">
-            <p class="pageviews"><span id="n-pageviews">100</span>K PAGEVIEWS</p>
-            <div class="price-plan">
-                <p class="price"><span>$</span>6.00</p>
-                <p class="plan">/month</p>
-            </div>
+        <!--<div class="price-pageviews">-->
+        <p class="pageviews" id="pageviews">10K PAGEVIEWS</p>
+        <div class="price-plan">
+            <p class="price" id="price">$8.00</p>
+            <p class="plan" id="plan">/month</p>
         </div>
+        <!--</div>-->
         <div class="slider">
-            <input class="slider-range" type="range" min="0" max="100" value="50" name="range-pageviews" id="range-pageviews">
+            <input class="slider-range" type="range" min="10" max="1000" value="10" step="10" name="range-pageviews" id="range-pageviews">
         </div>
         <div class="toggle-price">
             <div class="toggle">
-                <p id="monthly">Monthly Billing</p>
+                <p id="monthly" class="plan-on">Monthly Billing</p>
                 <label for="switch-discount-plan" class="switch"> <input type="checkbox" name="switch-discount-plan" id="switch-discount-plan"></label>
-                <p id="yearly">Yearly Billing</p>
+                <p id="yearly" class="plan-off">Yearly Billing</p>
             </div>
-            <span id="discount">25% discount</span>
+            <span id="discount"></span>
         </div>
         <hr class="linear">
-        <div class="benefits-button">
-            <ul>
-                <li><img src="images/icon-check.svg" alt=""> Unlimited websites</li>
-                <li><img src="images/icon-check.svg" alt=""> 100% data ownership</li>
-                <li><img src="images/icon-check.svg" alt=""> Email reports</li>
-            </ul>
-            <div class="btn">
-                <input class="button" type="submit" value="Start my trial">
-            </div>
+        <!--<div class="benefits-button">-->
+        <ul class="benefits-button">
+            <li><img src="images/icon-check.svg" alt=""> Unlimited websites</li>
+            <li><img src="images/icon-check.svg" alt=""> 100% data ownership</li>
+            <li><img src="images/icon-check.svg" alt=""> Email reports</li>
+        </ul>
+        <div class="btn">
+            <input class="button" type="submit" value="Start my trial">
         </div>
+        <!--</div>-->
     </div>
 </body>
 
