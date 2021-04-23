@@ -288,3 +288,12 @@ h2 {
     cursor: pointer;
     color: var(--Light-Grayish-Blue);
 }
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
